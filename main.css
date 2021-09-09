@@ -1,8 +1,77 @@
-*{
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root{
+    --primary-green : #157058;
+    --secondry-green : #A7F3D0;
+    --primary-white : #ffffff;
 }
+*{ 
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+
 .container{
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
+    width: 100%;
+    max-width: 500px;
+    min-height: 200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: var(--primary-green);
+}
+h1, p{
+    color: var(--primary-white);
+}
+label{
+    font-size: 1.3rem;
+    padding: 1.5rem 1rem 0.5rem;
+    color: var(--secondry-green);
+}
+input{
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    height: 50px;
+    display: block;
+    margin-bottom: 1rem;
+}
+button{
+    padding: 0.5rem 1rem;
+    display: block;
+    font-size: 1rem;
+    border: none;
+    margin: 1rem auto 0;
+    background-color:var(--secondry-green);
+    color: var(--primary-green);
+    font-weight: bold;
+}
+.errorMsg{
+    padding-top: 1rem;
+    color: var(--primary-white);
+}
+#output{
+    margin: 1rem 0;    
+}
+#output table, th, td{
+    padding: 0.2rem;
+    color: var(--primary-green);
+    background-color:var(--secondry-green);
+    border: 2px solid var(--primary-green) ;
+    border-collapse: collapse;
+}
+.noOfNotes{
+    background-color: var(--primary-white);
+    font-weight: bold;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    padding-top: 1rem;
+}
+
+th,td{
+    word-wrap: break-word;
 }
