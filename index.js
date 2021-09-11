@@ -1,21 +1,25 @@
-const billAmount = document.querySelector("#bill-amount");
-const checkButton = document.querySelector("#check-button");
-const cashGiven = document.querySelector("#cash-given");
-const message = document.querySelector("#error-message");
-const availableNotes = [2000,500,100,20,10,5,1];
-const noOfNotes = document.querySelectorAll(".no-of-notes");
+var billAmount = document.querySelector("#bill-amount");
+var checkButton = document.querySelector("#check-button");
+var cashGiven = document.querySelector("#cash-given");
+var message = document.querySelector("#error-message");
+var availableNotes = [2000,500,100,20,10,5,1];
+var noOfNotes = document.querySelectorAll(".no-of-notes");
 
 checkButton.addEventListener("click", function validateBillAmountAndCashAmount() {
     message.style.display = "none";
-    if (billAmount.value > 0) {
-        if(cashGiven.value >= billAmount.value){
-          const amountToBeReturned = cashGiven.value - billAmount.value;
+    if (Number(billAmount.value) > 0) {
+        console.log(Number(billAmount.value),Number(cashGiven.value));
+        if(Number(cashGiven.value) >= Number(billAmount.value)){
+            console.log(Number(billAmount.value),Number(cashGiven.value));
+          var amountToBeReturned = Number(cashGiven.value) - Number(billAmount.value);
           calculateChange(amountToBeReturned);
         }
         else{
+            console.log(Number(billAmount.value),Number(cashGiven.value));
             showMessage("The cash given should atleast be equal to bill amount")
         }
     } else {
+        console.log(Number(billAmount.value),Number(cashGiven.value));
     showMessage("The Bill Amount should be greater than 0");
     }
 });
